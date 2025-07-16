@@ -9,19 +9,6 @@ When generating unit tests for this FastAPI project, follow these guidelines:
 - For unittest patterns, query: `Use Context7 to get Python unittest framework documentation and patterns`
 - For Pydantic validation testing, query: `Use Context7 to get Pydantic testing documentation and validation patterns`
 
-### Context7 MCP Configuration Examples
-If using compatible IDEs/editors, configure Context7 MCP server:
-```json
-{
-  "mcpServers": {
-    "context7": {
-      "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"]
-    }
-  }
-}
-```
-
 ## Project Context
 - This is a FastAPI backend application for order processing
 - Main application entry point: `app/main.py`
