@@ -71,3 +71,85 @@ The `criterion` is a string that indicates the filter to be applied to the ord
 - `pending`: Only consider orders with the status `pending`.
 - `canceled`: Only consider orders with the status `canceled`.
 - `all`: Consider all orders, regardless of their status.
+---
+
+## Test Report Generation
+
+This project includes a custom agent for generating comprehensive test reports in multiple formats.
+
+### Using the Test Report Generator
+
+The test report generator runs all tests and creates reports in four formats:
+- **Text** - Human-readable console output
+- **JSON** - Machine-readable format for CI/CD integration
+- **HTML** - Interactive web-based report with visualizations
+- **Markdown** - Documentation-friendly format
+
+### Quick Start
+
+Run the test report generator:
+
+```bash
+python generate_test_reports.py
+```
+
+This will:
+1. Discover and run all tests in the `app/` directory
+2. Generate comprehensive reports in the `test-reports/` directory
+3. Display a summary of test results
+
+### Generated Reports
+
+After running the generator, you'll find these files in `test-reports/`:
+
+- `test_report.txt` - Text format summary
+- `test_report.json` - JSON format for automation
+- `test_report.html` - Interactive HTML dashboard
+- `test_report.md` - Markdown format for docs
+
+### Viewing Reports
+
+**Text Report:**
+```bash
+cat test-reports/test_report.txt
+```
+
+**HTML Report:**
+```bash
+# Linux
+xdg-open test-reports/test_report.html
+
+# macOS
+open test-reports/test_report.html
+
+# Windows
+start test-reports/test_report.html
+```
+
+**JSON Report:**
+```bash
+cat test-reports/test_report.json | python -m json.tool
+```
+
+### Custom Agent Instructions
+
+The project includes custom agent instructions for:
+- **Documentation Generation** (`.github/copilot-instructions-documentation.md`)
+- **Unit Test Generation** (`.github/copilot-instructions-unit-tests.md`)
+- **Test Report Generation** (`.github/copilot-instructions-test-reports.md`)
+
+These instructions guide GitHub Copilot to generate consistent, high-quality code and documentation for this project.
+
+### Running Tests Manually
+
+Run tests without generating reports:
+
+```bash
+cd app && python -m unittest discover -v
+```
+
+Run specific test file:
+
+```bash
+cd app && python -m unittest test_solution.py -v
+```
